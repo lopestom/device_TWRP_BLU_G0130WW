@@ -71,7 +71,6 @@ deploy:
   provider: releases
   api_key:
   api_key: $GitOAUTHToken
-    secure: "K77oR/TPjI1E5QPejZB1n56eIhQm2a1dS44JDLAmC/o/r8mmSDPRE9jpJzviahv1jM/Ck4X6SFN+c/U7gA48yzmm9YVs6QvKzvds+4AQxf4eqBFQsIwKhelegLAdzs8mBflj9oPuWR+xLFc5WDUHklRFsWs+B1vna76OjL97ZWxwhRpGbWjqathQNvzrIwAFJ6+q9InpqOf7+x8fp0Fr5fUJHiiXZcty0+NNc/T0NqNmkNVgsAwgVEFv+pieDCUJCUbfWoDDJ8j8YzPj2TpzIGZQ+6psNy+L+07wh+SFDV0G6aK1jWPqu09HdhfxRYhBS+3fxbYFJrTv36dM+Nq2uK+ChWD1Q4ovy4XqSR3OQQCN5/yQSCDvX/JZ24ehcvwvWsBqZ7J11duFFLjSpap+g8rGi36JjN/JrG0F/4RQrneOrMIYWA5avN+N+lP/bNquEO7Zde/nGMIKxAQ3r9nvZxlNdc1oucN89k6Y1lWTo44SH9CgP6JCMEbzpW0aIe9phz3cRutJ60rFe9vLQLPmOHyBBPKOALF/MbvRCGdwgu0ciVqUB3SbV+UdeabG7ScVSDaUZ7gAqAsO/a17rLYYcRLSPpyoapCJTYL7vIvQFF66vUGOZMKwSI45TF9xG/bvcxVIi0IMvU8OgzKS7jGf63BIGNFaZxV+QXPZKoCn9T0="
   file_glob: true
   file: $HOME/twrp/*.img
   on:
