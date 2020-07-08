@@ -34,7 +34,7 @@
     "rm -rf external/exfat && git clone https://github.com/omnirom/android_external_exfat -b android-8.1 --depth 1 external/exfat",
     "rm -rf external/fuse && git clone https://github.com/omnirom/android_external_fuse -b android-8.0 --depth 1 external/fuse",
     "( rm -rf system/vold || true) && git clone https://github.com/omnirom/android_system_vold -b android-6.0 --depth 1 system/vold",
-    "docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v \"$(pwd):/home/builder/twrp/:rw,z\" -v \"${HOME}/.ccache:/srv/ccache:rw,z\" fr3akyphantom/droid-builder bash << EOF\nsudo apt-get update -qqy\n#sudo apt-get install -qqy --no-install-recommends openjdk-8-jdk-headless\ncd /home/builder/twrp/\nsource build/envsetup.sh\nlunch omni_G0130WW-userdebug\nmka recoveryimage 1>/dev/null\nmake -j$(nproc --all) recoveryimage\nexit\nEOF\n"
+    "docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v \"$(pwd):/home/builder/twrp/:rw,z\" -v \"${HOME}/.ccache:/srv/ccache:rw,z\" fr3akyphantom/droid-builder bash << EOF\nsudo apt-get update -qqy\n#sudo apt-get install -qqy --no-install-recommends openjdk-8-jdk-headless\ncd /home/builder/twrp/\nsource build/envsetup.sh\nlunch omni_G0130WW-userdebug\nmka recoveryimage 1>/dev/null\nexit\nEOF\n"
   ],
   "after_success": [
     "export version=$(cat bootable/recovery/variables.h | grep \"define TW_MAIN_VERSION_STR\" | cut -d '\"' -f2)",
@@ -58,7 +58,9 @@
         "branch": [
           "master"
         ]
-      },
+      tags: false
+    repo: lopestom/device_TWRP_BLU_G0130WW/
+    },
       "token": "$GitOAUTHToken"
     }
   ],
