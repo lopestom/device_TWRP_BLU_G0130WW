@@ -1,0 +1,84 @@
+os: linux
+dist: bionic
+language: generic
+sudo: required
+git:
+  depth: 1
+addons:
+  apt:
+    update:
+      - true
+    packages:
+      - wput
+      - pxz
+env:
+  global:
+    - secure: "RmEoHQxoRB3dDrogDq7SSpJFN6wImrtfFUadNzOaYK8+ly7KJmgbzkEAPjKcx+t1FQia8g73iPsDsHQbRRkJw6Ws/iTJ1Cr62rGZJIe9QOfRRtMudoqZw8L/T2kXjFR6helKqLpktScC9J2bYk102HACBeF3fkqwvAXJarHgvRc0Ltw+snXW5qa4iAqgLbgyQm5Vmd5pG/C5ck9hjpj8qBnIEBvcaYRLBRsClv1CONd5uRRQl+NjIKj+Y3yr8pGuL5XYfkgKJjBz1Gv3mUNTtSn5rSnUx2Wa4evswxz+YEVzYrqqTS692zFHgUrL3PNYAO1arIjJACK/7cB28mFNhRZt4LkDMJGC4x7+leqJkm1CT3WnFCtarXqCFb3+Vc7Dex2p9q1oCURvBi9PKVakllqLJEUif9lkAGGxqt9mldDaC4jSYSU9LVbQjYqUl9ngAHNgX1G2L5rasiD0YGuLBg1cvhasHOep91PhRVItb46ZobNFBGWWd4WzldCKUDscgNYRKPfNaQrAzga3nXah4pcaDoUolOWIj6VYskPuf5eFWNwrNnbYN4JNwNRmCkyQpAwN2NqqHB8oVvzDFHgdgP1LEN6rlGNMNRMyR3+zoJeGLftsI2GXw9thcTWvhO6Lvia+CgsSx7N+yMkrgEKK4Z0lyQROyA41u9yODDGlGqo="
+    - secure: "szaozYqPVXzlgLGamD21bLf+I4PqKEyYUL2na6RajRSGvPI67AF7vBuabcIjLIJCwdNBklqValHPA99+RyO7N1sP0wvTIb5YH9owbUaGT3BcPy92l2gYVk3SEEYh5sjvq7nlKvP1QEeiMeYBAkB1j41NSsLBP2kYYKXAvcQxYqrR5GQuQgOJlTbY9q3PSDInM5gsxHM6SNtpJf3xtlzbJq3Yvju35bFwc1XJJO5rhePFM9cODF0HUl7E0sbJYECXQFbSmNCd8/rL2dXyvt60jBH0V3GRdinVEGkM/HBuCRtfu4PvdTTsIBzYUargHpu9Nn7CzGqcRDlVTRVQV9B0x+180jtwIB14jmcxvcTYJOybMDaNqTTHO505FImGsMUPhX51oEELWgrDmnr2vLSFDPYxM18RoAZ65B82me96d4J5VB1MfpOTqK4UgrB1SDklQPGDD8oXmmCL+vek8oJKUeSjB4lDlTSNJrXz/u5adXWAP3nybMQOTzRys5AAr+V+9SEayPDgotwI37ZlhUznQ3YDM0vWeDaTwMqGC88f8S0RFTx3i/4BEZHnVjwzbC95JXErcOerPXxv4RhWDN5wAEiWQdDvpoRp/GxIDFMDTuGnwPzdTO/IIAfxUJJZBsGM+/trOiNx3w8S/lOuVRVmGW2yhvWgjXr1KZkFfjlalX0="
+    - secure: "nfMM/npoUvv8JfAWZZJrlK2IJM1EPccNheBEouPacWODZ8h/GUAmA91aSUdQ3JM7kv22lXyj8P7+FHtAhUMQgIFBBoRpRNh1SHrvGO8eOp8TYOLqOkgFInJeFZiBi5lmrx4/Iv2JoO7JDZMws8o9ftcAJiNdEo10eF6pKYQKY9MDZeZgPP1q2KwAVZQbLCZdtfoOx8jSjOTz078sJzr6+9BxDsFYPs53Rt312QvZTXUoyAMY/pxGvXr0pCuBtWhsX0MMNTnhrby9/F2uEgjUXmjef3ffHuIIOfq9pGGpfsWKw6aSlei5NDAXdA7UDO9sR/HNW8IyAeFIEq22itt8AAVsJ91XipiiK2Vfj5Vp+PXSBZY/vy761Dw1b8dxdCqtV2nhTFtdTpUz/7F6NZZMuAOXcEHVJ01Vrai6sJHT9VkD8DAE7UcWrHPjVx2z0r8IGUSHIAVuLA7YxgG4xI1zIPTnine4vLEzYCTsISsPHfhWz36bC6DnD53zIbbMuClgvdjIBL+B9y6CesOQ3ojJ+KK6mKeIAqgJQGoAd2DndDqKKGFagIhePQ8ydrePPEnLGH0fDkXBOTbCJvtJCjoUN3P7lvctaVVi04w0m7FTXYmySnE4+X+HelUlsrFJ5UJ5R20EzVriZO54IAIl4/rUFOuC+9KEex/3brXFTwJS+xc="
+services:
+  - docker
+before_install:
+  - docker pull fr3akyphantom/droid-builder:latest
+before_script:
+  - cd $HOME && mkdir twrp
+  # download the TWRP Compressed Source Files from PhantomZone54's Release
+  # Uncomment & Use below line If Building for Lollipop-based Devices
+  # - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-5.1-norepo-20200222.tar.xz"
+  # Use below line If Building for Marshmallow-based Devices
+  #- TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-6.0-norepo-20200222.tar.xz"
+  # Uncomment & Use below line If Building for Nougat-based Devices
+  # - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-7.1-norepo-20200222.tar.xz"
+  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz.aa"
+  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz.ab"
+  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz.ac"
+  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz.ad"
+
+  - wget -q ${TWRP_SOURCE} -O $HOME/twrp.tar.xz
+  - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
+script:
+  - cd $HOME/twrp/ && git clone https://github.com/lopestom/device_TWRP_BLU_G0130WW.git device/BLU/G0130WW
+  - rm -rf bootable/recovery && git clone https://github.com/TeamWin/android_bootable_recovery -b android-10.0 --depth 1 bootable/recovery
+  - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery -b android-9.0 --depth 1 bootable/recovery
+  - rm -rf bootable/recovery && git clone https://github.com/TeamWin/android_bootable_recovery -b android-9.0 --depth 1 bootable/recovery
+  - rm -rf external/busybox && git clone https://github.com/omnirom/android_external_busybox -b android-9.0 --depth 1 external/busybox
+  - rm -rf external/ntfs-3g && git clone https://github.com/omnirom/android_external_ntfs-3g -b android-8.1 --depth 1 external/ntfs-3g
+  - rm -rf external/exfat && git clone https://github.com/omnirom/android_external_exfat -b android-8.1 --depth 1 external/exfat
+  - rm -rf external/fuse && git clone https://github.com/omnirom/android_external_fuse -b android-8.0 --depth 1 external/fuse
+  - ( rm -rf system/vold || true) && git clone https://github.com/omnirom/android_system_vold -b android-6.0 --depth 1 system/vold
+  - |
+    docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/builder/twrp/:rw,z" -v "${HOME}/.ccache:/srv/ccache:rw,z" fr3akyphantom/droid-builder bash << EOF
+    sudo apt-get update -qqy
+    #sudo apt-get install -qqy --no-install-recommends openjdk-8-jdk-headless
+    cd /home/builder/twrp/
+    source build/envsetup.sh
+    lunch omni_G0130WW-userdebug
+    mka recoveryimage 1>/dev/null
+    make -j$(nproc --all) recoveryimage
+    exit
+    EOF
+after_success:
+  - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
+  - export nowTime=$(date +%Y%m%d-%H%M)
+  - cp $HOME/twrp/out/target/product/G0130WW/recovery.img $HOME/twrp/TWRP-$version-G0130WW-$nowTime-Unofficial.img
+  - cd $HOME/twrp/out/target/product/G0130WW/system/
+  - tar -I pxz -cf $HOME/twrp/extra-system-files-$nowTime.tar.xz *
+  - cd $HOME/twrp/
+  - wput TWRP-$version-G0130WW-$nowTime-Unofficial.img ftp://"$FTPUser":"$FTPPass"@"$FTPHost"//TWBuild-$version-$nowTime/
+  - wput extra-system-files-$nowTime.tar.xz ftp://"$FTPUser":"$FTPPass"@"$FTPHost"//TWBuild-$version-$nowTime/
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+  api_key: $GitOAUTHToken
+    secure: "K77oR/TPjI1E5QPejZB1n56eIhQm2a1dS44JDLAmC/o/r8mmSDPRE9jpJzviahv1jM/Ck4X6SFN+c/U7gA48yzmm9YVs6QvKzvds+4AQxf4eqBFQsIwKhelegLAdzs8mBflj9oPuWR+xLFc5WDUHklRFsWs+B1vna76OjL97ZWxwhRpGbWjqathQNvzrIwAFJ6+q9InpqOf7+x8fp0Fr5fUJHiiXZcty0+NNc/T0NqNmkNVgsAwgVEFv+pieDCUJCUbfWoDDJ8j8YzPj2TpzIGZQ+6psNy+L+07wh+SFDV0G6aK1jWPqu09HdhfxRYhBS+3fxbYFJrTv36dM+Nq2uK+ChWD1Q4ovy4XqSR3OQQCN5/yQSCDvX/JZ24ehcvwvWsBqZ7J11duFFLjSpap+g8rGi36JjN/JrG0F/4RQrneOrMIYWA5avN+N+lP/bNquEO7Zde/nGMIKxAQ3r9nvZxlNdc1oucN89k6Y1lWTo44SH9CgP6JCMEbzpW0aIe9phz3cRutJ60rFe9vLQLPmOHyBBPKOALF/MbvRCGdwgu0ciVqUB3SbV+UdeabG7ScVSDaUZ7gAqAsO/a17rLYYcRLSPpyoapCJTYL7vIvQFF66vUGOZMKwSI45TF9xG/bvcxVIi0IMvU8OgzKS7jGf63BIGNFaZxV+QXPZKoCn9T0="
+  file_glob: true
+  file: $HOME/twrp/*.img
+  on:
+    branch: master
+branches:
+  only:
+    - master
+  except:
+    - /^(?i:untagged)-.*$/
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
