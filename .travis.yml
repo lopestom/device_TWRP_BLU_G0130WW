@@ -72,3 +72,4 @@
     ]
   }
 }
+    install: travis_wait mvn install
