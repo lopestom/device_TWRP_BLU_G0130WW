@@ -43,8 +43,7 @@
     "cd $HOME/twrp/out/target/product/G0130WW/system/",
     "tar -I pxz -cf $HOME/twrp/extra-system-files-$nowTime.tar.xz *",
     "cd $HOME/twrp/",
-    "wput TWRP-$version-G0130WW-$nowTime-Unofficial.img ftp://\"$FTPUser\":\"$FTPPass\"@\"$FTPHost\"//TWBuild-$version-$nowTime/",
-    "wput extra-system-files-$nowTime.tar.xz ftp://\"$FTPUser\":\"$FTPPass\"@\"$FTPHost\"//TWBuild-$version-$nowTime/"
+    - curl -s --upload-file TWRP-$version-BLU_G0130WW-$(date +"%Y%m%d")-Unofficial-version-test.img https://transfer.sh/ && echo ""
   ],
   "deploy": [
     {
