@@ -8,14 +8,6 @@ addons:
   apt:
     update:
       - true
-    packages:
-      - wput
-      - pxz
-env:
-  global:
-    - secure: "RmEoHQxoRB3dDrogDq7SSpJFN6wImrtfFUadNzOaYK8+ly7KJmgbzkEAPjKcx+t1FQia8g73iPsDsHQbRRkJw6Ws/iTJ1Cr62rGZJIe9QOfRRtMudoqZw8L/T2kXjFR6helKqLpktScC9J2bYk102HACBeF3fkqwvAXJarHgvRc0Ltw+snXW5qa4iAqgLbgyQm5Vmd5pG/C5ck9hjpj8qBnIEBvcaYRLBRsClv1CONd5uRRQl+NjIKj+Y3yr8pGuL5XYfkgKJjBz1Gv3mUNTtSn5rSnUx2Wa4evswxz+YEVzYrqqTS692zFHgUrL3PNYAO1arIjJACK/7cB28mFNhRZt4LkDMJGC4x7+leqJkm1CT3WnFCtarXqCFb3+Vc7Dex2p9q1oCURvBi9PKVakllqLJEUif9lkAGGxqt9mldDaC4jSYSU9LVbQjYqUl9ngAHNgX1G2L5rasiD0YGuLBg1cvhasHOep91PhRVItb46ZobNFBGWWd4WzldCKUDscgNYRKPfNaQrAzga3nXah4pcaDoUolOWIj6VYskPuf5eFWNwrNnbYN4JNwNRmCkyQpAwN2NqqHB8oVvzDFHgdgP1LEN6rlGNMNRMyR3+zoJeGLftsI2GXw9thcTWvhO6Lvia+CgsSx7N+yMkrgEKK4Z0lyQROyA41u9yODDGlGqo="
-    - secure: "szaozYqPVXzlgLGamD21bLf+I4PqKEyYUL2na6RajRSGvPI67AF7vBuabcIjLIJCwdNBklqValHPA99+RyO7N1sP0wvTIb5YH9owbUaGT3BcPy92l2gYVk3SEEYh5sjvq7nlKvP1QEeiMeYBAkB1j41NSsLBP2kYYKXAvcQxYqrR5GQuQgOJlTbY9q3PSDInM5gsxHM6SNtpJf3xtlzbJq3Yvju35bFwc1XJJO5rhePFM9cODF0HUl7E0sbJYECXQFbSmNCd8/rL2dXyvt60jBH0V3GRdinVEGkM/HBuCRtfu4PvdTTsIBzYUargHpu9Nn7CzGqcRDlVTRVQV9B0x+180jtwIB14jmcxvcTYJOybMDaNqTTHO505FImGsMUPhX51oEELWgrDmnr2vLSFDPYxM18RoAZ65B82me96d4J5VB1MfpOTqK4UgrB1SDklQPGDD8oXmmCL+vek8oJKUeSjB4lDlTSNJrXz/u5adXWAP3nybMQOTzRys5AAr+V+9SEayPDgotwI37ZlhUznQ3YDM0vWeDaTwMqGC88f8S0RFTx3i/4BEZHnVjwzbC95JXErcOerPXxv4RhWDN5wAEiWQdDvpoRp/GxIDFMDTuGnwPzdTO/IIAfxUJJZBsGM+/trOiNx3w8S/lOuVRVmGW2yhvWgjXr1KZkFfjlalX0="
-    - secure: "nfMM/npoUvv8JfAWZZJrlK2IJM1EPccNheBEouPacWODZ8h/GUAmA91aSUdQ3JM7kv22lXyj8P7+FHtAhUMQgIFBBoRpRNh1SHrvGO8eOp8TYOLqOkgFInJeFZiBi5lmrx4/Iv2JoO7JDZMws8o9ftcAJiNdEo10eF6pKYQKY9MDZeZgPP1q2KwAVZQbLCZdtfoOx8jSjOTz078sJzr6+9BxDsFYPs53Rt312QvZTXUoyAMY/pxGvXr0pCuBtWhsX0MMNTnhrby9/F2uEgjUXmjef3ffHuIIOfq9pGGpfsWKw6aSlei5NDAXdA7UDO9sR/HNW8IyAeFIEq22itt8AAVsJ91XipiiK2Vfj5Vp+PXSBZY/vy761Dw1b8dxdCqtV2nhTFtdTpUz/7F6NZZMuAOXcEHVJ01Vrai6sJHT9VkD8DAE7UcWrHPjVx2z0r8IGUSHIAVuLA7YxgG4xI1zIPTnine4vLEzYCTsISsPHfhWz36bC6DnD53zIbbMuClgvdjIBL+B9y6CesOQ3ojJ+KK6mKeIAqgJQGoAd2DndDqKKGFagIhePQ8ydrePPEnLGH0fDkXBOTbCJvtJCjoUN3P7lvctaVVi04w0m7FTXYmySnE4+X+HelUlsrFJ5UJ5R20EzVriZO54IAIl4/rUFOuC+9KEex/3brXFTwJS+xc="
 services:
   - docker
 before_install:
@@ -28,12 +20,8 @@ before_script:
   # Use below line If Building for Marshmallow-based Devices
   #- TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-6.0-norepo-20200222.tar.xz"
   # Uncomment & Use below line If Building for Nougat-based Devices
-  # - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-7.1-norepo-20200222.tar.xz"
-  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz.aa"
-  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz.ab"
-  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz.ac"
-  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz.ad"
-
+  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-7.1-norepo-20200222.tar.xz"
+  - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-9.0-norepo-20200222.tar.xz"
   - wget -q ${TWRP_SOURCE} -O $HOME/twrp.tar.xz
   - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 script:
@@ -69,7 +57,6 @@ after_success:
 deploy:
   skip_cleanup: true
   provider: releases
-  api_key:
   api_key: $GitOAUTHToken
   file_glob: true
   file: $HOME/twrp/*.img
