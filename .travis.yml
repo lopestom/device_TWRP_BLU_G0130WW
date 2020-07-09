@@ -24,8 +24,8 @@ before_script:
   - wget -q ${TWRP_SOURCE} -O $HOME/twrp.tar.xz
   - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 script:
-  # Replace your $$USERNAME$$, $$REPO_URL$$, $$BRAND$$, $$DEVICE$$
-  - cd $HOME/twrp/ && git clone https://github.com/$$USERNAME$$/$$REPO_URL$$.git device/$$BRAND$$/$$DEVICE$$
+  # Replace your  lopestom, https://github.com/lopestom/device_TWRP_BLU_G0130WW/upload/master, BLU, G0130WW
+  - cd $HOME/twrp/ && git clone https://github.com/lopestom/device_TWRP_BLU_G0130WW.git device/BLU/G0130WW
   - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery -b android-9.0 --depth 1 bootable/recovery
   - |
     docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/builder/twrp/:rw,z" -v "${HOME}/.ccache:/srv/ccache:rw,z" fr3akyphantom/droid-builder bash << EOF
@@ -33,16 +33,16 @@ script:
     source build/envsetup.sh
     # Choose build flavor as "eng" or "userdebug"
     BUILD_FLAVOR="eng"
-    lunch omni_$$DEVICE$$-${BUILD_FLAVOR}
+    lunch omni_G0130WW-${BUILD_FLAVOR}
     make -j$(nproc --all) recoveryimage
     exit
     EOF
 after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
-  - cp $HOME/twrp/out/target/product/$$DEVICE$$/recovery.img $HOME/twrp/TWRP-$version-$$DEVICE$$-$(date +"%Y%m%d")-Unofficial.img
+  - cp $HOME/twrp/out/target/product/G0130WW/recovery.img $HOME/twrp/TWRP-$version-G0130WW-$(date +"%Y%m%d")-Unofficial.img
   - cd $HOME/twrp/
   # Optional: You might need to switch from https://transfer.sh to https://file.io
-  # - curl -s --upload-file TWRP-$version-$$DEVICE$$-$(date +"%Y%m%d")-Unofficial.img https://transfer.sh/ && echo ""
+  # - curl -s --upload-file TWRP-$version-G0130WW-$(date +"%Y%m%d")-Unofficial.img https://transfer.sh/ && echo ""
 deploy:
   skip_cleanup: true
   provider: releases
@@ -52,7 +52,7 @@ deploy:
   file: $HOME/twrp/*.img
   on:
     tags: false
-    repo: $$USERNAME$$/$$REPO_URL$$ # Optional: If you want to deploy on different repository
+    repo:  lopestom/https://github.com/lopestom/device_TWRP_BLU_G0130WW/upload/master # Optional: If you want to deploy on different repository
     branch: master # Optional: Needs to be exact as the config branch
 branches:
   only:
