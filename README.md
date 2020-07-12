@@ -1,5 +1,11 @@
 # TWRP Device Tree - BLU G9 - G0130WW
 
+
+Added Contributor and real compiler TWRP for G0130WW.
+Thanks @rokibhasansagar for solving errors and creating file. The recovery.img tested and worked good.
+
+Download file for all: https://github.com/rokibhasansagar/device_TWRP_BLU_G0130WW/releases/tag/2.9.1-test
+
 ## About Device
 
 ![BLU G9 G0130WW](https://fdn2.gsmarena.com/vv/pics/blu/blu-g9-1.jpg)
