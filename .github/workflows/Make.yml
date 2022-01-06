@@ -18,7 +18,7 @@ on:
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
-        default: 'https://github.com/depesh1977/Alcatel-5024D-1S-TWRP/tree/master/Alcatel/5024D'
+        default: 'https://github.com/lopestom/device_TWRP_BLU_G0130WW'
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true
@@ -26,15 +26,15 @@ on:
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/Alcatel/5024D'
+        default: 'device/BLU/G0130WW'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: '5024D'
+        default: 'G0130WW'
       DEVICE_TYPE:
         description: 'DEVICE_TYPE'
         required: true
-        default: 'recovery'
+        default: 'boot or recovery'
 
 jobs:
   build:
