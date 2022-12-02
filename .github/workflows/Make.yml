@@ -80,7 +80,7 @@ jobs:
         cd workspace
         echo "::set-output name=pwd::$(pwd)"
         git config --global user.name "lopestom"
-        git config --global user.email "lopestom1@gmail.com"
+        git config --global user.email "guillopes2002@gmail.com"
         repo init --depth=1 -u ${{ github.event.inputs.LIBRARY_URL }} -b ${{ github.event.inputs.LIBRARY_BRANCH }}
       id: pwd
           
@@ -116,4 +116,4 @@ jobs:
         tag_name: ${{ github.run_id }}
         body: Recovery for ${{ github.event.inputs.DEVICE_NAME }}
       env:
-        GITHUB_TOKEN: ${{ secrets.TEST }}
+        GITHUB_TOKEN: ${{ secrets.G0130WW }}
